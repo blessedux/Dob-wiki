@@ -8,8 +8,10 @@ export default function Home() {
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
-        <LandingHero />
-        <NavigationCards />
+        <div className="max-w-screen-xl mx-auto px-8 md:px-10 lg:px-16">
+          <LandingHero />
+          <NavigationCards />
+        </div>
       </main>
       <SiteFooter />
     </div>

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { MainNav } from "@/components/main-nav"
 import { Button } from "@/components/ui/button"
 import { Search } from "lucide-react"
@@ -6,22 +7,15 @@ import { Search } from "lucide-react"
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-black/95 backdrop-blur">
-      <div className="container flex h-16 items-center">
+      <div className="container flex h-16 items-center px-8 md:px-10 lg:px-16 max-w-screen-xl mx-auto">
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-md border border-border">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-4 w-4"
-            >
-              <rect width="18" height="18" x="3" y="3" rx="2" />
-              <path d="M9 9h6v6H9z" />
-            </svg>
+          <div className="flex h-8 w-8 items-center justify-center">
+            <Image 
+              src="/dob-logo.svg" 
+              alt="DOB Protocol Logo" 
+              width={32} 
+              height={32} 
+            />
           </div>
           <span className="font-bold">DOB Protocol</span>
         </Link>

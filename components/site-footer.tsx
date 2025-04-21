@@ -3,7 +3,7 @@ import Link from "next/link"
 export function SiteFooter() {
   return (
     <footer className="border-t border-border/5 bg-black py-6">
-      <div className="container flex flex-col items-center justify-between gap-4 px-4 md:flex-row md:px-6">
+      <div className="container flex flex-col items-center justify-between gap-4 px-8 md:px-10 lg:px-16 max-w-screen-xl mx-auto md:flex-row">
         <p className="text-sm text-muted-foreground">
           DOB Protocol Wiki | Developed with{" "}
           <Link

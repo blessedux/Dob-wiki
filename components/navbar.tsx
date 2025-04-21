@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Search, Moon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -8,7 +9,13 @@ export function Navbar() {
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-full bg-white" />
+            <Image 
+              src="/dob-logo.svg" 
+              alt="DOB Protocol Logo" 
+              width={32} 
+              height={32} 
+              className="rounded-full"
+            />
             <span className="text-xl font-bold">DOB Protocol</span>
           </Link>
         </div>
@@ -31,7 +38,7 @@ export function Navbar() {
                 strokeLinejoin="round"
                 className="h-5 w-5"
               >
-                <path d="M18 9a5 5 0 0 0-5-5H9a5 5 0 0 0-5 5v7.5a2.5 2.5 0 0 0 2.5 2.5H8l2 2 2-2h2.5a2.5 0 0 0 2.5-2.5V9Z" />
+                <path d="M18 9a5 5 0 0 0-5-5H9a5 5 0 0 0-5 5v7.5a2.5 2.5 0 0 0 2.5 2.5H8l2 2 2-2h2.5a2.5 2.5 0 0 0 2.5-2.5V9Z" />
                 <path d="M8 14v-4" />
                 <path d="M16 14v-4" />
                 <path d="M8 10h.01" />
