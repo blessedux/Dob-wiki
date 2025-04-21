@@ -7,7 +7,7 @@ export function LandingHero() {
       <div className="container max-w-3xl">
         <h1 className="mb-4 text-5xl font-bold tracking-tight md:text-6xl lg:text-7xl">DOB Protocol Wiki</h1>
         <p className="mb-8 text-lg text-muted-foreground md:text-xl">
-          Comprehensive documentation and resources for understanding and participating in the DOB Protocol ecosystem.
+          Revolutionizing RWA management with AI agents | Automating on-chain and off-chain flows
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Button asChild className="bg-red-500 hover:bg-red-600">
