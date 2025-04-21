@@ -92,7 +92,10 @@ export default function DobiEhivePage() {
         </ul>
 
         <p className="text-lg font-semibold mt-6">
-          Stay tuned for updates as this groundbreaking partnership continues to evolve.
+          Stay tuned for updates as this groundbreaking partnership continues to evolve. 
+          <Link href="/docs/dobi" className="ml-2 text-blue-400 hover:text-blue-300">
+            Learn more about DOBI
+          </Link>
         </p>
       </div>
     </div>

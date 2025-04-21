@@ -18,7 +18,7 @@ export default function DobiAIAgentPage() {
         </p>
 
         <p>
-          A significant milestone for DOBI was its successful "red pill" in <a href="https://app.virtuals.io/virtuals/13315" target="_blank" rel="noopener noreferrer">Virtuals.fun</a>, achieved in under 24 hours. This rapid deployment showcases the project&apos;s innovative capabilities and sets a precedent for future integrations within the blockchain ecosystem. DOBI&apos;s potential extends beyond current functionalities. Future enhancements will include capabilities to handle unstructured data and images, further solidifying its role as a validator within the ecosystem.
+          A significant milestone for DOBI was its successful &quot;red pill&quot; in <a href="https://app.virtuals.io/virtuals/13315" target="_blank" rel="noopener noreferrer">Virtuals.fun</a>, achieved in under 24 hours. This rapid deployment showcases the project&apos;s innovative capabilities and sets a precedent for future integrations within the blockchain ecosystem. DOBI&apos;s potential extends beyond current functionalities. Future enhancements will include capabilities to handle unstructured data and images, further solidifying its role as a validator within the ecosystem.
         </p>
 
         <p>

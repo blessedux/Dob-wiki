@@ -1,7 +1,7 @@
 import { Heading } from "@/components/heading"
 import { Breadcrumb } from "@/components/breadcrumb"
 import Link from "next/link"
-import { ArrowUpRight, Zap, HelpCircle, Vote, Coins } from "lucide-react"
+import { ArrowUpRight, Zap, HelpCircle, Coins, BarChart3, MapPin } from "lucide-react"
 
 export default function DOBPage() {
   return (
@@ -35,9 +35,34 @@ export default function DOBPage() {
                 <ArrowUpRight className="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100" />
               </div>
               <h2 className="mb-2 text-2xl font-bold">Overview</h2>
-              <p className="text-gray-400">Learn about DOB token's fundamentals and vision.</p>
+              <p className="text-gray-400">Learn about DOB token&apos;s fundamentals and vision.</p>
             </div>
           </Link>
+          <Link href="/docs/dob/tokenomics" className="group">
+            <div className="flex h-full flex-col rounded-lg border border-gray-800 bg-gray-900/50 p-6 transition-all hover:border-gray-700 hover:bg-gray-900/80">
+              <div className="mb-4 flex items-center justify-between">
+                <BarChart3 className="h-6 w-6" />
+                <ArrowUpRight className="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100" />
+              </div>
+              <h2 className="mb-2 text-2xl font-bold">Tokenomics</h2>
+              <p className="text-gray-400">Explore DOB token distribution, staking, and utility.</p>
+            </div>
+          </Link>
+          <Link href="/docs/dob/roadmap" className="group">
+            <div className="flex h-full flex-col rounded-lg border border-gray-800 bg-gray-900/50 p-6 transition-all hover:border-gray-700 hover:bg-gray-900/80">
+              <div className="mb-4 flex items-center justify-between">
+                <MapPin className="h-6 w-6" />
+                <ArrowUpRight className="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100" />
+              </div>
+              <h2 className="mb-2 text-2xl font-bold">Roadmap</h2>
+              <p className="text-gray-400">View the project&apos;s development timeline and future plans.</p>
+            </div>
+          </Link>
+        </div>
+      </section>
+      
+      <section className="my-8">
+        <div className="grid gap-6 md:grid-cols-2">
           <Link href="/docs/dob/presale" className="group">
             <div className="flex h-full flex-col rounded-lg border border-gray-800 bg-gray-900/50 p-6 transition-all hover:border-gray-700 hover:bg-gray-900/80">
               <div className="mb-4 flex items-center justify-between">

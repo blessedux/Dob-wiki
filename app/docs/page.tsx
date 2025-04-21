@@ -35,7 +35,7 @@ export default function DocsPage() {
               <ArrowRight className="h-4 w-4 mr-2" />
               <span>DOB Overview</span>
             </Link>
-            <Link href="/docs/roadmap" className="inline-flex items-center text-blue-400 hover:text-blue-300">
+            <Link href="/docs/dob/roadmap" className="inline-flex items-center text-blue-400 hover:text-blue-300">
               <ArrowRight className="h-4 w-4 mr-2" />
               <span>Project Roadmap</span>
             </Link>
@@ -49,6 +49,10 @@ export default function DocsPage() {
             <Link href="/docs/dob" className="inline-flex items-center text-blue-400 hover:text-blue-300">
               <ArrowRight className="h-4 w-4 mr-2" />
               <span>DOB Token</span>
+            </Link>
+            <Link href="/docs/dob/tokenomics" className="inline-flex items-center text-blue-400 hover:text-blue-300">
+              <ArrowRight className="h-4 w-4 mr-2" />
+              <span>DOB Tokenomics</span>
             </Link>
             <Link href="/docs/dob/presale" className="inline-flex items-center text-blue-400 hover:text-blue-300">
               <ArrowRight className="h-4 w-4 mr-2" />
@@ -66,6 +70,21 @@ export default function DocsPage() {
         </div>
         
         <div className="space-y-4">
+          <Heading level={2}>Platform Features</Heading>
+          <p className="text-gray-300">Discover how the DOB Protocol platform works and its key features.</p>
+          <div className="flex flex-col space-y-2">
+            <Link href="/docs/dob/roadmap#key-platform-features" className="inline-flex items-center text-blue-400 hover:text-blue-300">
+              <ArrowRight className="h-4 w-4 mr-2" />
+              <span>Platform Overview</span>
+            </Link>
+            <Link href="/docs/dob/roadmap#pool-types" className="inline-flex items-center text-blue-400 hover:text-blue-300">
+              <ArrowRight className="h-4 w-4 mr-2" />
+              <span>Pool Types</span>
+            </Link>
+          </div>
+        </div>
+        
+        <div className="space-y-4">
           <Heading level={2}>AI & Automation</Heading>
           <p className="text-gray-300">Discover how AI powers the DOB Protocol ecosystem and enables automation.</p>
           <div className="flex flex-col space-y-2">
@@ -76,21 +95,6 @@ export default function DocsPage() {
             <Link href="/docs/dobi/ehive" className="inline-flex items-center text-blue-400 hover:text-blue-300">
               <ArrowRight className="h-4 w-4 mr-2" />
               <span>Ehive Integration</span>
-            </Link>
-          </div>
-        </div>
-        
-        <div className="space-y-4">
-          <Heading level={2}>Platform Guide</Heading>
-          <p className="text-gray-300">Discover the features and capabilities of the DOB Platform.</p>
-          <div className="flex flex-col space-y-2">
-            <Link href="#" className="inline-flex items-center text-blue-400 hover:text-blue-300">
-              <ArrowRight className="h-4 w-4 mr-2" />
-              <span>Platform Overview</span>
-            </Link>
-            <Link href="#" className="inline-flex items-center text-blue-400 hover:text-blue-300">
-              <ArrowRight className="h-4 w-4 mr-2" />
-              <span>Developer API</span>
             </Link>
           </div>
         </div>
