@@ -7,14 +7,14 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, Save } from "lucide-react";
 import Link from "next/link";
 
-interface PageProps {
+interface DocEditPageProps {
   params: {
     category: string;
     slug: string;
   };
 }
 
-export default function EditDocPage({ params }: PageProps) {
+export default function EditDocPage({ params }: DocEditPageProps) {
   const router = useRouter();
   const { category, slug } = params;
   const [content, setContent] = useState<string>("");

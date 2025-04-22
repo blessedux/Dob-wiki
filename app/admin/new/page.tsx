@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Heading } from "@/components/heading";
 import { Button } from "@/components/ui/button";
@@ -8,7 +8,13 @@ import { Input } from "@/components/ui/input";
 import { ChevronLeft, Save, File } from "lucide-react";
 import Link from "next/link";
 
-export default function NewDocPage() {
+// Loading fallback component
+function LoadingFallback() {
+  return <div className="container py-8 max-w-screen-lg mx-auto">Loading...</div>;
+}
+
+// Main content component that uses searchParams
+function NewDocContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const defaultCategory = searchParams.get("category") || "";
@@ -224,5 +230,13 @@ Add your content here... If left empty, a basic template will be created."
         </div>
       </div>
     </div>
+  );
+}
+
+export default function NewDocPage() {
+  return (
+    <Suspense fallback={<LoadingFallback />}>
+      <NewDocContent />
+    </Suspense>
   );
 } 
