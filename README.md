@@ -16,19 +16,6 @@ The DOB Protocol Wiki aims to:
 
 The admin area and API routes are protected by HTTP Basic Authentication.
 
-### Setup
-
-1. In the `.env.local` file, set your desired admin credentials:
-
-   ```
-   ADMIN_USERNAME=your_username
-   ADMIN_PASSWORD=your_secure_password
-   ```
-
-2. If you don't set these environment variables, the default credentials will be:
-   - Username: admin
-   - Password: dobprotocol
-
 ### Security Notes
 
 - Always use HTTPS in production to ensure credentials are encrypted
@@ -60,21 +47,35 @@ content/
     ...
 ```
 
+## UI Components
+
+This documentation site uses the Shadcn UI component library, which provides a collection of reusable components built on Radix UI and styled with Tailwind CSS.
+
+### Key Components
+
+- **Layout Components**: Header, footer, sidebar, and navigation
+- **Interactive Elements**: Buttons, search interface, dropdowns
+- **Content Display**: Cards, code blocks, tables
+- **Animation**: Smooth transitions and loading states with Framer Motion
+
+All components are located in the `/components` directory and organized as follows:
+
+- `/components/ui/` - Core Shadcn UI components
+- `/components/` - Application-specific components
+
 ## Technical Requirements
 
 ### Dependencies
 
 This project relies on the following key dependencies:
 
-- **Next.js 15.2.4**: The React framework for production
 - **React 19**: UI library
 - **MDX**: For enhanced markdown processing
 - **gray-matter**: For parsing frontmatter in markdown files
 - **Tailwind CSS**: For styling
 - **Framer Motion**: For animations
 - **Lucide React**: For icons
-
-Full list of dependencies can be found in `package.json`.
+- **Shadcn UI**: Component library
 
 ### System Requirements
 
@@ -123,40 +124,3 @@ If you cannot access the admin area:
 1. Verify credentials in `.env.local` file
 2. Check browser cache and try in incognito mode
 3. Make sure middleware.ts is properly configured
-
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
