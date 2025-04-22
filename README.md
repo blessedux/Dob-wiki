@@ -1,6 +1,16 @@
 # DOB Protocol Wiki
 
-Documentation site for DOB Protocol.
+The official documentation platform for DOB Protocol, designed to provide comprehensive information about DOB's ecosystem, technology, and services. This wiki serves as the central knowledge base for users, developers, and stakeholders within the DOB Protocol community.
+
+## Purpose of This Documentation
+
+The DOB Protocol Wiki aims to:
+
+- Provide clear, accessible explanations of DOB Protocol and its components
+- Offer technical documentation for developers integrating with DOB
+- Explain DOBI, the AI agent system, and related technologies
+- Document tokenomics, roadmap, and ecosystem information
+- Serve as a reliable reference for all DOB Protocol-related queries
 
 ## Admin Authentication
 
@@ -27,7 +37,7 @@ The admin area and API routes are protected by HTTP Basic Authentication.
 
 ## Content Management
 
-The wiki content is stored as Markdown files in the `content/docs/` directory:
+The wiki content is stored as Markdown files (.md) in the `content/docs/` directory:
 
 - Files are organized by category (folders)
 - Files use frontmatter for metadata (title, description)
@@ -50,6 +60,28 @@ content/
     ...
 ```
 
+## Technical Requirements
+
+### Dependencies
+
+This project relies on the following key dependencies:
+
+- **Next.js 15.2.4**: The React framework for production
+- **React 19**: UI library
+- **MDX**: For enhanced markdown processing
+- **gray-matter**: For parsing frontmatter in markdown files
+- **Tailwind CSS**: For styling
+- **Framer Motion**: For animations
+- **Lucide React**: For icons
+
+Full list of dependencies can be found in `package.json`.
+
+### System Requirements
+
+- **Node.js 18.17** or later
+- **npm 9.6.7** or later
+- At least 1GB of free disk space for content files
+
 ## Development
 
 ```bash
@@ -65,6 +97,32 @@ npm run build
 # Start production server
 npm run start
 ```
+
+## Deployment
+
+For production deployment, we recommend:
+
+1. Setting up environment variables for admin credentials
+2. Using a secure hosting platform with HTTPS enabled
+3. Setting up proper backup systems for the content directory
+
+## Troubleshooting
+
+### 404 Error on Homepage
+
+If you see a 404 error when accessing the root URL:
+
+1. Make sure you have a proper index page at `/app/page.tsx`
+2. Check if navigation routes are correctly defined
+3. Verify that content directories and files exist
+
+### Authentication Issues
+
+If you cannot access the admin area:
+
+1. Verify credentials in `.env.local` file
+2. Check browser cache and try in incognito mode
+3. Make sure middleware.ts is properly configured
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 

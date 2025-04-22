@@ -4,7 +4,12 @@ import { NavigationCards } from "@/components/navigation-cards"
 import { SiteFooter } from "@/components/site-footer"
 import { BackgroundPaths } from "@/components/ui/background-paths"
 
+// Add some debugging for the components that might be causing the issue
+console.log("Rendering Home page");
+
 export default function Home() {
+  console.log("Home component rendering");
+  
   return (
     <BackgroundPaths className="min-h-screen">
       <div className="flex min-h-screen flex-col">
