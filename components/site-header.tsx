@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { SearchDialog } from "@/components/search-dialog"
+import { SearchInline } from "@/components/search-inline"
 import { ExternalLink } from "lucide-react"
 
 export function SiteHeader() {
@@ -20,7 +20,7 @@ export function SiteHeader() {
           <span className="font-bold">DOB Protocol</span>
         </Link>
         <div className="ml-auto flex items-center gap-2">
-          <SearchDialog />
+          <SearchInline />
           <Button variant="outline" className="border-[#587CE9] text-[#587CE9] hover:bg-[#587CE9]/10" asChild>
             <Link href="https://home.dobprotocol.com" target="_blank" rel="noopener noreferrer">
               App <ExternalLink className="ml-1 h-3.5 w-3.5" />
