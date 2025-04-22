@@ -1,5 +1,6 @@
 import { Breadcrumb } from "@/components/breadcrumb"
 import { Heading } from "@/components/heading"
+import { PageNavigation } from "@/components/page-navigation"
 
 export default function RoadmapPage() {
   return (
@@ -248,11 +249,14 @@ export default function RoadmapPage() {
 
         <Heading level={3}>Marketing Objectives</Heading>
         <ul>
-          <li>Position Dobprotocol as a leader in the Web3 ecosystem and decentralized economies.</li>
-          <li>Showcase its technology, use cases, and advantages over competitors.</li>
-          <li>Educate users about blockchain and attract investors.</li>
+          <li>Build brand awareness, educate about Dobprotocol, and drive user acquisition and token sales.</li>
         </ul>
       </div>
+      
+      <PageNavigation 
+        prevPage={{ title: "FAQ", href: "/docs/faq" }}
+        nextPage={{ title: "Dobprotocol Team", href: "/docs/team" }}
+      />
     </div>
   )
 }
