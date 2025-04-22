@@ -1,6 +1,7 @@
 import { Breadcrumb } from "@/components/breadcrumb"
 import { Heading } from "@/components/heading"
 import { Accordion } from "@/components/ui/accordion"
+import { PageNavigation } from "@/components/page-navigation"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -182,6 +183,11 @@ export default function FaqPage() {
             <Accordion items={gettingStartedQuestions} allowMultiple={false} />
           </section>
         </div>
+
+        <PageNavigation 
+          prevPage={{ title: "DOB Protocol Platform", href: "/docs/platform" }}
+          nextPage={{ title: "DOB Protocol Roadmap", href: "/docs/roadmap" }}
+        />
       </div>
     </div>
   )

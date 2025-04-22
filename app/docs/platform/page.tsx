@@ -1,5 +1,6 @@
 import { Breadcrumb } from "@/components/breadcrumb"
 import { Heading } from "@/components/heading"
+import { PageNavigation } from "@/components/page-navigation"
 
 export default function PlatformPage() {
   return (
@@ -92,6 +93,11 @@ export default function PlatformPage() {
           By combining Ehive&apos;s innovation with Dobprotocol&apos;s technology, we are taking a bold step toward a future where investments in Real World Assets are accessible, efficient, and sustainable. Together, we redefine ownership and democratize investment opportunities in electric mobility.
         </p>
       </div>
+
+      <PageNavigation 
+        prevPage={{ title: "Documentation Home", href: "/docs" }}
+        nextPage={{ title: "FAQ", href: "/docs/faq" }}
+      />
     </div>
   )
 }
