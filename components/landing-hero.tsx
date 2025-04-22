@@ -10,7 +10,7 @@ export function LandingHero() {
           Revolutionizing RWA management with AI agents | Automating on-chain and off-chain flows
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <Button asChild className="bg-red-500 hover:bg-red-600">
+          <Button asChild className="bg-[#587CE9] hover:bg-[#4367d6]">
             <Link href="/docs">Documentation</Link>
           </Button>
           <Button variant="outline" className="border-gray-700" asChild>
