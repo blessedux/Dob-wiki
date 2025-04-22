@@ -95,7 +95,7 @@ export function SiteFooter() {
           
           {/* Telegram Icon */}
           <Link
-            href="https://t.me/dobprotocol"
+            href="https://t.me/dobprotocol_official"
             className="text-muted-foreground hover:text-foreground"
             target="_blank"
             rel="noopener noreferrer"

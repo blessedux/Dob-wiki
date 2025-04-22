@@ -1,8 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
-import { MainNav } from "@/components/main-nav"
 import { Button } from "@/components/ui/button"
-import { Search } from "lucide-react"
+import { SearchDialog } from "@/components/search-dialog"
 
 export function SiteHeader() {
   return (
@@ -19,12 +18,8 @@ export function SiteHeader() {
           </div>
           <span className="font-bold">DOB Protocol</span>
         </Link>
-        <MainNav className="mx-6" />
         <div className="ml-auto flex items-center gap-2">
-          <Button variant="ghost" size="icon">
-            <Search className="h-4 w-4" />
-            <span className="sr-only">Search</span>
-          </Button>
+          <SearchDialog />
           <Button variant="outline" asChild>
             <Link href="https://github.com/dobprotocol" target="_blank" rel="noopener noreferrer">
               GitHub
