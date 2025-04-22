@@ -2,9 +2,8 @@ import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
 /**
- * Combines multiple class names and merges tailwind classes
- * @param inputs - Class names to combine
- * @returns Merged class names
+ * Merges class names with tailwind-merge
+ * This function is used by Shadcn UI components
  */
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
