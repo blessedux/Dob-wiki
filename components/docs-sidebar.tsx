@@ -49,7 +49,7 @@ const docs: DocSection[] = [
     defaultOpen: true,
     items: [
       { title: "Dobprotocol Platform", href: "/docs/platform", icon: <Globe className="h-4 w-4" /> },
-      { title: "Dobprotocol FAQ", href: "/docs/faq", icon: <FileQuestion className="h-4 w-4" /> },
+      { title: "FAQ", href: "/docs/faq", icon: <FileQuestion className="h-4 w-4" /> },
       { title: "Dobprotocol Roadmap", href: "/docs/roadmap", icon: <RouteIcon className="h-4 w-4" /> },
       { title: "Dobprotocol Team", href: "/docs/team", icon: <Users className="h-4 w-4" /> },
       { title: "Dobprotocol Pitch Deck", href: "/docs/pitch-deck", icon: <Presentation className="h-4 w-4" /> },
