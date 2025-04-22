@@ -1,3 +1,71 @@
+# DOB Protocol Wiki
+
+Documentation site for DOB Protocol.
+
+## Admin Authentication
+
+The admin area and API routes are protected by HTTP Basic Authentication.
+
+### Setup
+
+1. In the `.env.local` file, set your desired admin credentials:
+
+   ```
+   ADMIN_USERNAME=your_username
+   ADMIN_PASSWORD=your_secure_password
+   ```
+
+2. If you don't set these environment variables, the default credentials will be:
+   - Username: admin
+   - Password: dobprotocol
+
+### Security Notes
+
+- Always use HTTPS in production to ensure credentials are encrypted
+- Change the default password immediately
+- Consider implementing a more robust authentication system for production
+
+## Content Management
+
+The wiki content is stored as Markdown files in the `content/docs/` directory:
+
+- Files are organized by category (folders)
+- Files use frontmatter for metadata (title, description)
+- The admin interface allows creating and editing documents
+- All edits are saved directly to the filesystem
+
+### File Structure
+
+```
+content/
+  docs/
+    dob/
+      overview.md
+      tokenomics.md
+      ...
+    dobi/
+      overview.md
+      ai-agent.md
+      ...
+    ...
+```
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm run start
+```
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
