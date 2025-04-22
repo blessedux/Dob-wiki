@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { SearchDialog } from "@/components/search-dialog"
+import { ExternalLink } from "lucide-react"
 
 export function SiteHeader() {
   return (
@@ -20,9 +21,9 @@ export function SiteHeader() {
         </Link>
         <div className="ml-auto flex items-center gap-2">
           <SearchDialog />
-          <Button variant="outline" asChild>
-            <Link href="https://github.com/dobprotocol" target="_blank" rel="noopener noreferrer">
-              GitHub
+          <Button variant="outline" className="border-[#587CE9] text-[#587CE9] hover:bg-[#587CE9]/10" asChild>
+            <Link href="https://home.dobprotocol.com" target="_blank" rel="noopener noreferrer">
+              App <ExternalLink className="ml-1 h-3.5 w-3.5" />
             </Link>
           </Button>
         </div>
