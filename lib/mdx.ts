@@ -12,7 +12,14 @@ const contentDirectory = path.join(process.cwd(), 'content');
 export interface FrontMatter {
   title: string;
   description: string;
-  [key: string]: string;
+  seo?: {
+    title?: string;
+    description?: string;
+    keywords?: string;
+    ogImage?: string;
+    canonicalUrl?: string;
+  };
+  [key: string]: any;
 }
 
 export interface DocPage {

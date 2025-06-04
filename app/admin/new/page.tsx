@@ -27,6 +27,12 @@ function NewDocContent() {
   const [isSaving, setIsSaving] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [categories, setCategories] = useState<string[]>([]);
+  const [seoTitle, setSeoTitle] = useState<string>("");
+  const [seoDescription, setSeoDescription] = useState<string>("");
+  const [keywords, setKeywords] = useState<string>("");
+  const [ogImage, setOgImage] = useState<string>("");
+  const [canonicalUrl, setCanonicalUrl] = useState<string>("");
+  const [showSeoPreview, setShowSeoPreview] = useState<boolean>(false);
 
   useEffect(() => {
     // Auto-generate slug from title
@@ -51,6 +57,16 @@ function NewDocContent() {
     fetchCategories();
   }, []);
 
+  // Auto-generate SEO title and description from main title and description
+  useEffect(() => {
+    if (title && !seoTitle) {
+      setSeoTitle(`${title} | DOB Protocol Wiki`);
+    }
+    if (description && !seoDescription) {
+      setSeoDescription(description);
+    }
+  }, [title, description, seoTitle, seoDescription]);
+
   const handleSave = async () => {
     if (!title || !description || !category || !slug) {
       setError("Please fill in all required fields");
@@ -60,6 +76,12 @@ function NewDocContent() {
     const defaultContent = `---
 title: ${title}
 description: ${description}
+seo:
+  title: ${seoTitle}
+  description: ${seoDescription}
+  keywords: ${keywords}
+  ogImage: ${ogImage}
+  canonicalUrl: ${canonicalUrl}
 ---
 
 # ${title}
@@ -188,6 +210,102 @@ Add your content here...
               className="w-full bg-black border-gray-800 focus:border-blue-600"
             />
           </div>
+        </div>
+
+        <div className="border-t border-gray-800 pt-6">
+          <div className="flex justify-between items-center mb-4">
+            <h3 className="text-lg font-medium">SEO Settings</h3>
+            <button
+              onClick={() => setShowSeoPreview(!showSeoPreview)}
+              className="text-sm text-blue-400 hover:text-blue-300"
+            >
+              {showSeoPreview ? "Hide Preview" : "Show Preview"}
+            </button>
+          </div>
+
+          <div className="space-y-4">
+            <div>
+              <label htmlFor="seoTitle" className="block text-sm font-medium text-gray-400 mb-1">
+                SEO Title
+              </label>
+              <Input
+                id="seoTitle"
+                value={seoTitle}
+                onChange={(e) => setSeoTitle(e.target.value)}
+                placeholder="SEO Title (defaults to: [Title] | DOB Protocol Wiki)"
+                className="w-full bg-black border-gray-800 focus:border-blue-600"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="seoDescription" className="block text-sm font-medium text-gray-400 mb-1">
+                Meta Description
+              </label>
+              <Input
+                id="seoDescription"
+                value={seoDescription}
+                onChange={(e) => setSeoDescription(e.target.value)}
+                placeholder="Meta description for search engines"
+                className="w-full bg-black border-gray-800 focus:border-blue-600"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="keywords" className="block text-sm font-medium text-gray-400 mb-1">
+                Keywords
+              </label>
+              <Input
+                id="keywords"
+                value={keywords}
+                onChange={(e) => setKeywords(e.target.value)}
+                placeholder="Comma-separated keywords"
+                className="w-full bg-black border-gray-800 focus:border-blue-600"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="ogImage" className="block text-sm font-medium text-gray-400 mb-1">
+                Open Graph Image URL
+              </label>
+              <Input
+                id="ogImage"
+                value={ogImage}
+                onChange={(e) => setOgImage(e.target.value)}
+                placeholder="URL for social media preview image"
+                className="w-full bg-black border-gray-800 focus:border-blue-600"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="canonicalUrl" className="block text-sm font-medium text-gray-400 mb-1">
+                Canonical URL
+              </label>
+              <Input
+                id="canonicalUrl"
+                value={canonicalUrl}
+                onChange={(e) => setCanonicalUrl(e.target.value)}
+                placeholder="Canonical URL (if different from page URL)"
+                className="w-full bg-black border-gray-800 focus:border-blue-600"
+              />
+            </div>
+          </div>
+
+          {showSeoPreview && (
+            <div className="mt-6 p-4 bg-gray-900/50 border border-gray-800 rounded-md">
+              <h4 className="text-sm font-medium mb-2">Search Engine Preview</h4>
+              <div className="space-y-2">
+                <div className="text-blue-400 text-sm truncate">
+                  {canonicalUrl || `https://dobprotocol.com/docs/${category}/${slug}`}
+                </div>
+                <div className="text-lg text-white font-medium">
+                  {seoTitle || `${title} | DOB Protocol Wiki`}
+                </div>
+                <div className="text-sm text-gray-400">
+                  {seoDescription || description}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
         <div>

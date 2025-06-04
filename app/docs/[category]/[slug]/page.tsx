@@ -15,8 +15,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   try {
     const { frontMatter } = await getDocBySlug(params.category, params.slug);
     return {
-      title: `${frontMatter.title} | DOB Protocol Wiki`,
-      description: frontMatter.description,
+      title: frontMatter.seo?.title || `${frontMatter.title} | DOB Protocol Wiki`,
+      description: frontMatter.seo?.description || frontMatter.description,
+      keywords: frontMatter.seo?.keywords,
+      openGraph: {
+        title: frontMatter.seo?.title || frontMatter.title,
+        description: frontMatter.seo?.description || frontMatter.description,
+        images: frontMatter.seo?.ogImage ? [frontMatter.seo.ogImage] : undefined,
+      },
+      alternates: {
+        canonical: frontMatter.seo?.canonicalUrl || `https://dobprotocol.com/docs/${params.category}/${params.slug}`,
+      },
     };
   } catch (error) {
     return {

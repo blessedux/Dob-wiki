@@ -7,13 +7,15 @@ const nextConfig = {
     domains: [],
   },
   eslint: {
-    // Disable ESLint during production builds
-    ignoreDuringBuilds: true,
+    // Enable ESLint during production builds
+    ignoreDuringBuilds: false,
   },
   typescript: {
-    // Disable TypeScript checks during production builds
-    ignoreBuildErrors: true,
+    // Enable TypeScript checks during production builds
+    ignoreBuildErrors: false,
   },
+  // Enable production source maps for better debugging
+  productionBrowserSourceMaps: true,
 };
 
 module.exports = nextConfig; 
