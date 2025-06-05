@@ -1,0 +1,223 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "dynamicRoutes": [
+    {
+      "page": "/admin/edit/[category]/[slug]",
+      "regex": "^/admin/edit/([^/]+?)/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPcategory": "nxtPcategory",
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/admin/edit/(?<nxtPcategory>[^/]+?)/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/docs/[category]/[slug]",
+      "regex": "^/api/docs/([^/]+?)/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPcategory": "nxtPcategory",
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/api/docs/(?<nxtPcategory>[^/]+?)/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/docs/[category]",
+      "regex": "^/docs/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPcategory": "nxtPcategory"
+      },
+      "namedRegex": "^/docs/(?<nxtPcategory>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/docs/[category]/[slug]",
+      "regex": "^/docs/([^/]+?)/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPcategory": "nxtPcategory",
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/docs/(?<nxtPcategory>[^/]+?)/(?<nxtPslug>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/admin",
+      "regex": "^/admin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin(?:/)?$"
+    },
+    {
+      "page": "/admin/new",
+      "regex": "^/admin/new(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/new(?:/)?$"
+    },
+    {
+      "page": "/docs",
+      "regex": "^/docs(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs(?:/)?$"
+    },
+    {
+      "page": "/docs/dob",
+      "regex": "^/docs/dob(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs/dob(?:/)?$"
+    },
+    {
+      "page": "/docs/dob/overview",
+      "regex": "^/docs/dob/overview(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs/dob/overview(?:/)?$"
+    },
+    {
+      "page": "/docs/dob/presale",
+      "regex": "^/docs/dob/presale(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs/dob/presale(?:/)?$"
+    },
+    {
+      "page": "/docs/dob/roadmap",
+      "regex": "^/docs/dob/roadmap(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs/dob/roadmap(?:/)?$"
+    },
+    {
+      "page": "/docs/dob/tokenomics",
+      "regex": "^/docs/dob/tokenomics(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs/dob/tokenomics(?:/)?$"
+    },
+    {
+      "page": "/docs/dobi",
+      "regex": "^/docs/dobi(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs/dobi(?:/)?$"
+    },
+    {
+      "page": "/docs/dobi/ai-agent",
+      "regex": "^/docs/dobi/ai\\-agent(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs/dobi/ai\\-agent(?:/)?$"
+    },
+    {
+      "page": "/docs/dobi/dashboard",
+      "regex": "^/docs/dobi/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs/dobi/dashboard(?:/)?$"
+    },
+    {
+      "page": "/docs/dobi/ehive",
+      "regex": "^/docs/dobi/ehive(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs/dobi/ehive(?:/)?$"
+    },
+    {
+      "page": "/docs/dobi/overview",
+      "regex": "^/docs/dobi/overview(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs/dobi/overview(?:/)?$"
+    },
+    {
+      "page": "/docs/dobi/stake",
+      "regex": "^/docs/dobi/stake(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs/dobi/stake(?:/)?$"
+    },
+    {
+      "page": "/docs/dobi/vault",
+      "regex": "^/docs/dobi/vault(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs/dobi/vault(?:/)?$"
+    },
+    {
+      "page": "/docs/faq",
+      "regex": "^/docs/faq(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs/faq(?:/)?$"
+    },
+    {
+      "page": "/docs/partnerships",
+      "regex": "^/docs/partnerships(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs/partnerships(?:/)?$"
+    },
+    {
+      "page": "/docs/pitch-deck",
+      "regex": "^/docs/pitch\\-deck(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs/pitch\\-deck(?:/)?$"
+    },
+    {
+      "page": "/docs/platform",
+      "regex": "^/docs/platform(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs/platform(?:/)?$"
+    },
+    {
+      "page": "/docs/roadmap",
+      "regex": "^/docs/roadmap(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs/roadmap(?:/)?$"
+    },
+    {
+      "page": "/docs/team",
+      "regex": "^/docs/team(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs/team(?:/)?$"
+    },
+    {
+      "page": "/docs/technology",
+      "regex": "^/docs/technology(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs/technology(?:/)?$"
+    },
+    {
+      "page": "/docs/technology/architecture",
+      "regex": "^/docs/technology/architecture(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/docs/technology/architecture(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "RSC",
+    "varyHeader": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch",
+    "prefetchHeader": "Next-Router-Prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "Next-Router-Segment-Prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  },
+  "rewrites": []
+}
