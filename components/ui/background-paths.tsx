@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 function FloatingPaths({ position }: { position: number }) {
-    console.log("FloatingPaths rendering with position:", position);
-    
     const paths = Array.from({ length: 36 }, (_, i) => ({
         id: i,
         d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${
@@ -25,7 +23,6 @@ function FloatingPaths({ position }: { position: number }) {
                 className="w-full h-full text-slate-950 dark:text-white"
                 viewBox="0 0 696 316"
                 fill="none"
-                style={{ willChange: 'transform' }}
             >
                 <title>Background Paths</title>
                 {paths.map((path) => (
@@ -39,14 +36,12 @@ function FloatingPaths({ position }: { position: number }) {
                         animate={{
                             pathLength: 1,
                             opacity: [0.3, 0.6, 0.3],
-                            pathOffset: [0, 1, 0],
                         }}
                         transition={{
-                            duration: 20 + Math.random() * 10,
-                            repeat: Number.POSITIVE_INFINITY,
+                            duration: 20,
+                            repeat: Infinity,
                             ease: "linear",
                         }}
-                        style={{ willChange: 'transform, opacity' }}
                     />
                 ))}
             </svg>
