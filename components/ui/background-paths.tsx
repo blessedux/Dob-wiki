@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
 function FloatingPaths({ position }: { position: number }) {
     const paths = Array.from({ length: 36 }, (_, i) => ({
@@ -36,9 +37,10 @@ function FloatingPaths({ position }: { position: number }) {
                         animate={{
                             pathLength: 1,
                             opacity: [0.3, 0.6, 0.3],
+                            pathOffset: [0, 1, 0],
                         }}
                         transition={{
-                            duration: 20,
+                            duration: 20 + Math.random() * 10,
                             repeat: Infinity,
                             ease: "linear",
                         }}
@@ -58,6 +60,10 @@ export function BackgroundPaths({
     children?: React.ReactNode;
     className?: string;
 }) {
+    useEffect(() => {
+        console.log('BackgroundPaths mounted')
+    }, [])
+
     console.log("BackgroundPaths rendering");
     
     return (
