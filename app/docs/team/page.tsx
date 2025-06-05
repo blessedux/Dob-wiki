@@ -32,8 +32,7 @@ export default function TeamPage() {
       bio: "Fernando Castillo is a founder, blockchain specialist, and PhD candidate with 4 years of experience developing decentralized and scalable solutions. Currently, he combines his role as a researcher with a focus on security and efficiency in Web3 projects, bringing strategic vision and technical skills to drive innovation in the blockchain sector.",
       image: "/images/fernando_pic.webp",
       linkedin: "https://linkedin.com/in/fscastil90120/",
-      website: null,
-      warpcast: "https://warpcast.com/fscastil",
+      website: "https://dobprotocol.com/fernando-castillo",
       x: "https://x.com/fscastil"
     },
     {
@@ -42,8 +41,7 @@ export default function TeamPage() {
       bio: "With over 10 years of experience in AI, blockchain, and scalable software development, Oscar has successfully led multiple projects, including Forcast.tech, which now operates autonomously under his frameworks.",
       image: "/images/Oscar_pic.webp",
       linkedin: "https://linkedin.com/in/opcastil",
-      website: null,
-      warpcast: "https://warpcast.com/opcastil",
+      website: "https://dobprotocol.com/oscar-castillo",
       x: "https://x.com/opcastil"
     },
     {
@@ -51,10 +49,9 @@ export default function TeamPage() {
       role: "CCO",
       bio: "Simón is a Commercial Engineer with over 10 years of experience leading business development and commercial strategy across Latin America.",
       image: "/images/foto_simon.webp",
-      linkedin: "https://linkedin.com/in/78b86/",
-      website: null,
-      warpcast: null,
-      x: "https://x.com/simon_espinola"
+      linkedin: "https://www.linkedin.com/in/simon-espinola-marin-06a78b86/",
+      website: "https://dobprotocol.com/simon-espinola",
+      x: "https://x.com/Cryptosadhu1"
     },
     {
       name: "Joaquín Farfan",
@@ -62,10 +59,8 @@ export default function TeamPage() {
       bio: "Joaquín is a Full Stack Software Developer with over 6 years of experience building and scaling digital platforms across fintech, logistics, and decentralized systems.",
       image: "/images/foto_Joaquin.webp",
       linkedin: "https://linkedin.com/in/arfan/",
-      website: null,
-      github: "https://github.com/joaquinfarfan",
-      warpcast: null,
-      x: "https://x.com/joaquinfarfan"
+      github: "https://github.com/blessedux",
+      x: "https://x.com/blessed_ux"
     },
     {
       name: "Dani Dahm",
@@ -73,8 +68,7 @@ export default function TeamPage() {
       bio: "With a robust background in Visual Arts, Dani specializes in UI design, UX research, and comprehensive graphic design. At Dobprotocol, Dani leads interface design, conducts user testing, and creates graphic materials, including custom icons, illustrations, banners, and the project logo.",
       image: "/images/dani_dahm.webp",
       linkedin: "https://linkedin.com/in/dahm",
-      website: null,
-      warpcast: "https://warpcast.com/dahm",
+      website: "https://dobprotocol.com/dani-dahm",
       x: "https://x.com/dahm"
     },
     {
@@ -82,21 +76,18 @@ export default function TeamPage() {
       role: "Head of Marketing & Digital Strategy",
       bio: "With a background as a Web3 Journalist from the University of Santiago de Chile, Andres serves as Head of Marketing & Digital Strategy at Dobprotocol. Bringing expertise in digital marketing, blockchain, and strategic brand growth, Andres focuses on driving engagement and adoption within the Web3 ecosystem.",
       image: "/images/Foto_Andres.webp",
-      linkedin: "https://linkedin.com/in/anemic",
-      website: null,
-      warpcast: "https://warpcast.com/anemic",
-      x: "https://x.com/anemic"
+      linkedin: "https://www.linkedin.com/in/andresanemic/",
+      website: "https://dobprotocol.com/andres-pena",
+      x: "https://x.com/andresanemic"
     },
     {
       name: "Cristobal Oyarzun",
       role: "Public Relations",
       bio: "With extensive expertise in Web3 advisory, content creation, personal branding, and entrepreneurship, Cristobal has founded and led tech startups in IT, blockchain, and Web3, also developing digital marketing businesses building innovative solutions from the ground up.",
       image: "/images/foto_Cris.webp",
-      linkedin: "https://linkedin.com/in/vivordie/",
-      website: null,
-      telegram: "https://t.me/cristobaloyarzun",
-      warpcast: null,
-      x: "https://x.com/vivorteNFT"
+      linkedin: "https://www.linkedin.com/in/cristobal-oyarzun-astete-holdordie/",
+      website: "https://dobprotocol.com/cristobal-oyarzun",
+      x: "https://x.com/vivedetuarteNFT"
     },
     {
       name: "Mirna Ampuero",
@@ -104,9 +95,8 @@ export default function TeamPage() {
       bio: "Mirna Ampuero is a Business Developer with a background in mechatronic engineering and extensive experience in the blockchain ecosystem. Her expertise spans sustainable technology solutions, strategic growth, and blockchain-driven innovation. Focused on impactful projects, Mirna combines technical insight with business acumen to drive growth and adoption in the Web3 space.",
       image: "/images/MIRNA_pic.webp",
       linkedin: "https://linkedin.com/in/mirnaampuero/",
-      website: null,
-      warpcast: "https://warpcast.com/mirna95",
-      x: "https://x.com/mirna_ampuero__"
+      website: "https://dobprotocol.com/mirna-ampuero",
+      x: "https://x.com/mirnaampuero__"
     },
     {
       name: "Rubén Román",
@@ -114,9 +104,7 @@ export default function TeamPage() {
       bio: "Computer and Informatics Civil Engineer, with 3+ years experience working on Web3 projects, building new ones and maintaining existing ones, passionate on coding what makes him always be studying on personal projects.",
       image: "/images/ruben_picture.webp",
       linkedin: "https://linkedin.com/in/rubenromanvilasau",
-      website: null,
       github: "https://github.com/rubenromanvilasau",
-      warpcast: null,
       x: "https://x.com/rubnacio"
     }
   ]
@@ -153,34 +141,23 @@ export default function TeamPage() {
               </div>
               <p className="text-gray-400 text-sm mb-2 flex-grow">{member.bio}</p>
               <div className="flex gap-3 justify-center mt-auto pt-4">
-                {member.website && (
+                {member.website ? (
                   <Link href={member.website} target="_blank" rel="noopener noreferrer" aria-label="Website">
                     <WebsiteIcon />
                   </Link>
-                )}
-                {member.github && (
+                ) : member.github ? (
                   <Link href={member.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                     <GitHubIcon />
                   </Link>
-                )}
+                ) : null}
                 {member.linkedin && (
                   <Link href={member.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                     <LinkedInIcon />
                   </Link>
                 )}
-                {member.warpcast && (
-                  <Link href={member.warpcast} target="_blank" rel="noopener noreferrer" aria-label="Warpcast">
-                    <WarpcastIcon />
-                  </Link>
-                )}
                 {member.x && (
                   <Link href={member.x} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
                     <XIcon />
-                  </Link>
-                )}
-                {member.telegram && (
-                  <Link href={member.telegram} target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-                    <TelegramIcon />
                   </Link>
                 )}
               </div>
