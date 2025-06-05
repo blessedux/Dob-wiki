@@ -2,7 +2,12 @@ import { SiteHeader } from "@/components/site-header"
 import { LandingHero } from "@/components/landing-hero"
 import { NavigationCards } from "@/components/navigation-cards"
 import { SiteFooter } from "@/components/site-footer"
-import { BackgroundPaths } from "@/components/ui/background-paths"
+import dynamic from 'next/dynamic'
+
+const BackgroundPaths = dynamic(() => import('@/components/ui/background-paths').then(mod => mod.BackgroundPaths), {
+  ssr: false,
+  loading: () => <div className="min-h-screen" />
+})
 
 // Add some debugging for the components that might be causing the issue
 console.log("Rendering Home page");

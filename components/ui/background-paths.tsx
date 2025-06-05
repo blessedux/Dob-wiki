@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 function FloatingPaths({ position }: { position: number }) {
+    console.log("FloatingPaths rendering with position:", position);
+    
     const paths = Array.from({ length: 36 }, (_, i) => ({
         id: i,
         d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${
@@ -23,6 +25,7 @@ function FloatingPaths({ position }: { position: number }) {
                 className="w-full h-full text-slate-950 dark:text-white"
                 viewBox="0 0 696 316"
                 fill="none"
+                style={{ willChange: 'transform' }}
             >
                 <title>Background Paths</title>
                 {paths.map((path) => (
@@ -43,6 +46,7 @@ function FloatingPaths({ position }: { position: number }) {
                             repeat: Number.POSITIVE_INFINITY,
                             ease: "linear",
                         }}
+                        style={{ willChange: 'transform, opacity' }}
                     />
                 ))}
             </svg>
@@ -59,6 +63,8 @@ export function BackgroundPaths({
     children?: React.ReactNode;
     className?: string;
 }) {
+    console.log("BackgroundPaths rendering");
+    
     return (
         <div className={`relative overflow-hidden ${className}`}>
             <div className="absolute inset-0">
