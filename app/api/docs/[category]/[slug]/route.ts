@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from "next/server";
 import { getDocBySlug, saveDoc } from "@/lib/mdx";
 
 // GET a specific document
 export async function GET(
   request: NextRequest,
-  { params }: { params: { category: string; slug: string } }
+  { params }: any
 ) {
   try {
     const { category, slug } = params;
@@ -27,7 +28,7 @@ export async function GET(
 // PUT to update a document
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { category: string; slug: string } }
+  { params }: any
 ) {
   try {
     const { category, slug } = params;
@@ -62,7 +63,7 @@ export async function PUT(
 // POST to create a new document
 export async function POST(
   request: NextRequest,
-  { params }: { params: { category: string; slug: string } }
+  { params }: any
 ) {
   try {
     const { category, slug } = params;

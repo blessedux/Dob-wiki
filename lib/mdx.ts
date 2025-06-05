@@ -19,7 +19,7 @@ export interface FrontMatter {
     ogImage?: string;
     canonicalUrl?: string;
   };
-  [key: string]: any;
+  [key: string]: string | { [key: string]: string | undefined } | undefined;
 }
 
 export interface DocPage {

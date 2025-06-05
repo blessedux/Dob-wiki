@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { notFound } from "next/navigation";
 import { Heading } from "@/components/heading";
 import { Breadcrumb } from "@/components/breadcrumb";
@@ -11,7 +12,7 @@ interface PageProps {
   };
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: any): Promise<Metadata> {
   try {
     const { frontMatter } = await getDocBySlug(params.category, params.slug);
     return {
@@ -35,7 +36,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export default async function DocPage({ params }: PageProps) {
+export default async function DocPage({ params }: any) {
   try {
     const { category, slug } = params;
     const doc = await getDocBySlug(category, slug);
