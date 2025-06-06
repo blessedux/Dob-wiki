@@ -2,7 +2,8 @@
 import { notFound } from "next/navigation";
 import { Heading } from "@/components/heading";
 import { Breadcrumb } from "@/components/breadcrumb";
-import { getDocBySlug, renderMDX } from "@/lib/mdx";
+import { PageNavigation } from "@/components/page-navigation";
+import { getDocBySlug, renderMDX, getAllDocs } from "@/lib/mdx";
 import { Metadata } from "next";
 
 interface PageProps {
@@ -41,6 +42,21 @@ export default async function DocPage({ params }: any) {
     const { category, slug } = params;
     const doc = await getDocBySlug(category, slug);
     const content = await renderMDX(doc.content);
+    
+    // Get all docs to find prev/next navigation
+    const allDocs = await getAllDocs();
+    const categoryDocs = allDocs.filter(d => d.filePath.includes(`/docs/${category}/`));
+    const currentIndex = categoryDocs.findIndex(d => d.slug === slug);
+    
+    const prevPage = currentIndex > 0 ? {
+      title: categoryDocs[currentIndex - 1].frontMatter.title,
+      href: `/docs/${category}/${categoryDocs[currentIndex - 1].slug}`
+    } : undefined;
+    
+    const nextPage = currentIndex < categoryDocs.length - 1 ? {
+      title: categoryDocs[currentIndex + 1].frontMatter.title,
+      href: `/docs/${category}/${categoryDocs[currentIndex + 1].slug}`
+    } : undefined;
 
     return (
       <div className="space-y-6">
@@ -55,6 +71,11 @@ export default async function DocPage({ params }: any) {
         <div className="prose prose-invert max-w-none">
           {content}
         </div>
+
+        <PageNavigation 
+          prevPage={prevPage}
+          nextPage={nextPage}
+        />
       </div>
     );
   } catch (error) {

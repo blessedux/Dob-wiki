@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="border-t border-border/5 bg-black py-6">
       <div className="container flex flex-col items-center justify-between gap-4 px-4 md:flex-row md:px-6">
         <p className="text-sm text-muted-foreground">
-          DOB Protocol Wiki | Developed with{" "}
+          DOB Protocol Wiki 2025 | Developed with{" "}
           <Link
             href="https://ui.shadcn.com/docs"
             className="underline underline-offset-4"
