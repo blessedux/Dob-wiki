@@ -7,12 +7,20 @@ import Link from "next/link";
 import { Edit, Plus, ChevronDown } from "lucide-react";
 import { docsStructure } from "@/lib/docs-structure";
 
-export function CategorySection({ category, docs }: { category: string; docs: any[] }) {
+interface Doc {
+  slug: string;
+  frontMatter: {
+    title: string;
+    description: string;
+  };
+}
+
+export function CategorySection({ category, docs }: { category: string; docs: Doc[] }) {
   const [open, setOpen] = useState(true);
   // Find the structure for this category
   const section = docsStructure.find((s) => s.category === category || (s.category === null && s.items.some(i => i.slug === category)));
   // Map slugs to doc objects for quick lookup
-  const docsBySlug = Object.fromEntries(docs.map((doc: any) => [doc.slug, doc]));
+  const docsBySlug = Object.fromEntries(docs.map((doc: Doc) => [doc.slug, doc]));
 
   return (
     <div className="space-y-4">

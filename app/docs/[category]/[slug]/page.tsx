@@ -13,6 +13,14 @@ interface PageProps {
   };
 }
 
+export async function generateStaticParams() {
+  const docs = await getAllDocs();
+  return docs.map((doc) => ({
+    category: doc.filePath.split('/docs/')[1].split('/')[0],
+    slug: doc.slug,
+  }));
+}
+
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   try {
     const { frontMatter } = await getDocBySlug(params.category, params.slug);
