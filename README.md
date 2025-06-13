@@ -107,20 +107,62 @@ For production deployment, we recommend:
 2. Using a secure hosting platform with HTTPS enabled
 3. Setting up proper backup systems for the content directory
 
-## Troubleshooting
+## 🚀 Node.js Server Deployment & CMS Usage Guide
 
-### 404 Error on Homepage
+This project supports full SSR (Server-Side Rendering) and a simple CMS for editing wiki pages. Follow these steps to deploy and use the CMS on your Node.js server:
 
-If you see a 404 error when accessing the root URL:
+### 1. Clone or Upload the Project
 
-1. Make sure you have a proper index page at `/app/page.tsx`
-2. Check if navigation routes are correctly defined
-3. Verify that content directories and files exist
+Clone this repository or upload all source files (including `app/`, `components/`, `lib/`, `content/`, etc.) to your server.
 
-### Authentication Issues
+### 2. Install Dependencies
 
-If you cannot access the admin area:
+```
+npm install
+```
 
-1. Verify credentials in `.env.local` file
-2. Check browser cache and try in incognito mode
-3. Make sure middleware.ts is properly configured
+### 3. Build the App
+
+```
+npm run build
+```
+
+### 4. Start the Server
+
+If using the custom Express server:
+
+```
+npm run serve
+```
+
+Or, if using the built-in Next.js server:
+
+```
+npm run start
+```
+
+### 5. Access the Wiki and CMS
+
+- Visit `http://your-server-ip:3000` for the main site.
+- Visit `http://your-server-ip:3000/admin` for the admin panel (CMS).
+- Log in with the admin credentials (set in `.env.local` or use the defaults: `admin` / `dobprotocol`).
+
+### 6. Using the CMS
+
+- Create, edit, and delete wiki pages from the admin panel.
+- All content is stored as markdown files in `content/docs/`.
+- Changes are immediately reflected on the site.
+
+### 7. Do NOT Commit or Deploy These Folders
+
+- `node_modules/` (install on the server)
+- `.next/` (build on the server)
+- `dist/` (not needed for SSR)
+
+### 8. Environment Variables
+
+- Set up your `.env.local` file for admin credentials and any other secrets.
+
+---
+
+**This setup ensures your SSR site and CMS are fully functional on any Node.js server!**

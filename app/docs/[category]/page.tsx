@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Heading } from "@/components/heading";
 import { Breadcrumb } from "@/components/breadcrumb";
-import { getDocsByCategory, getDocBySlug, renderMDX } from "@/lib/mdx";
+import { getDocsByCategory, getDocBySlug, renderMDX, getAllCategories } from "@/lib/mdx";
 import { ArrowUpRight } from "lucide-react";
 import { Metadata } from "next";
 
@@ -28,6 +28,13 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
       description: `Documentation for ${params.category} in the DOB Protocol ecosystem.`,
     };
   }
+}
+
+export async function generateStaticParams() {
+  const categories = getAllCategories();
+  return categories.map((category) => ({
+    category: category,
+  }));
 }
 
 export default async function CategoryPage({ params }: any) {

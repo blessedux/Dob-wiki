@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAllCategories } from "@/lib/mdx";
 
+export const dynamic = 'force-static';
+export const revalidate = false;
+
 export async function GET() {
   try {
     const categories = getAllCategories();

@@ -1,6 +1,28 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from "next/server";
-import { getDocBySlug, saveDoc } from "@/lib/mdx";
+import { getDocBySlug, saveDoc, getAllCategories } from "@/lib/mdx";
+
+export const dynamic = 'force-static';
+export const revalidate = false;
+
+// Generate static params for all possible category/slug combinations
+export async function generateStaticParams() {
+  const categories = getAllCategories();
+  const params = [];
+
+  for (const category of categories) {
+    // For static export, we'll generate params for a few common slugs
+    const commonSlugs = ['introduction', 'getting-started', 'overview'];
+    for (const slug of commonSlugs) {
+      params.push({
+        category,
+        slug,
+      });
+    }
+  }
+
+  return params;
+}
 
 // GET a specific document
 export async function GET(
