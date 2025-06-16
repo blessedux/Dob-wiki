@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "build:prod": "NODE_ENV=production next build",
+    "build:static": "next build && ls -la out/",
     "start": "next start",
-    "serve": "NODE_ENV=production node server.js",
     "lint": "next lint"
   },
   "dependencies": {
@@ -16,11 +16,10 @@
     "@tailwindcss/postcss": "^4.1.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "express": "^4.21.2",
     "framer-motion": "^12.7.4",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.503.0",
-    "next": "^15.3.3",
+    "next": "15.2.4",
     "next-mdx-remote": "^5.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -39,7 +38,6 @@
     "autoprefixer": "^10.4.17",
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
-    "nodemon": "^3.1.10",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
