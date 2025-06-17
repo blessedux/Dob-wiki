@@ -4,17 +4,33 @@ import { getDocBySlug, getAllDocs } from '@/lib/mdx';
 // Generate static paths for all documents
 export async function generateStaticParams() {
   const docs = await getAllDocs();
-  return docs.map((doc) => ({
-    category: doc.filePath.split('/docs/')[1].split('/')[0],
-    slug: doc.slug,
-  }));
+  return docs.map((doc) => {
+    // Ensure we have a valid filePath
+    if (!doc.filePath) {
+      console.error('Document missing filePath:', doc);
+      return null;
+    }
+    
+    // Split the path and get the category
+    const pathParts = doc.filePath.split('/');
+    const category = pathParts[1] || 'general'; // Default to 'general' if no category found
+    
+    return {
+      category,
+      slug: doc.slug,
+    };
+  }).filter(Boolean); // Remove any null entries
 }
 
-export default async function AdminEditPage({
-  params,
-}: {
-  params: { category: string; slug: string };
-}) {
+type PageProps = {
+  params: Promise<{
+    category: string;
+    slug: string;
+  }>;
+}
+
+export default async function AdminEditPage(props: PageProps) {
+  const params = await props.params;
   const { category, slug } = params;
 
   try {
